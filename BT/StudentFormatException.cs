@@ -17,7 +17,7 @@ namespace BT
             {
                 Console.WriteLine("Enter Code: ");
                 String Code = Console.ReadLine();
-                Regex regex = new Regex("^[a-zA-Z]{2}[0-9]{6}");
+                Regex regex = new Regex("^[a-zA-Z]{2}[0-9]{6}$");
                 if (!regex.IsMatch(Code))
                 {
                     Console.WriteLine("invalid code pls input agian");

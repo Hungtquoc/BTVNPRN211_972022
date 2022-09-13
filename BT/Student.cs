@@ -24,9 +24,15 @@ namespace BT
             this.Dob = dob;
             Major = major;
         }
+
+        public Student(string code)
+        {
+            Code = code;
+        }
+
         public override string ToString()
         {
-            return "Student"+ Code +" "+ Name+" "+ " "+Dob +" "+ Major ;
+            return "Student"+ Code +" "+ Name+" "+Dob +" "+ Major ;
         }
         public void Display()
         {
@@ -39,6 +45,12 @@ namespace BT
             sfe.CheckInputName();
             sfe.CheckInputDoB();
             sfe.CheckInputMajor();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Student student &&
+                   Code == student.Code;
         }
     }
 }
