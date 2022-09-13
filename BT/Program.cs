@@ -6,6 +6,6 @@ internal class Program
     {   
         Student s = new Student();
         s.Input();
-        s.Display();
+            course.addStudent(s);
     }
 }
