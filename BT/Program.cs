@@ -11,11 +11,18 @@ internal class Program
         //s.Input();
         //s.Display();
         Course course = new Course();
-        course.inputCourse();
+        /*course.inputCourse();
         course.addStudent(s);
         course.addStudent(s1);
         course.addStudent(s2);
-        course.display();
+
+        //course.display();
+        course.writeText();
+        course.readText();
+        */
+        //course.calculateFileSize();
+        string path = Console.ReadLine();
+        Console.WriteLine(Course.GetFileSizeSumFromDirectory(path));
         /*while (true)
 	    {
             int i = Convert.ToInt32(Console.ReadLine());

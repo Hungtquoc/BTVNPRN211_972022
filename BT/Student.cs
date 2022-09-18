@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.IO;
 namespace BT
 {
     internal class Student
@@ -32,7 +32,7 @@ namespace BT
 
         public override string ToString()
         {
-            return "Student"+ Code +" "+ Name+" "+Dob +" "+ Major ;
+            return  Code +"| "+ Name+"| "+Dob +"| "+ Major ;
         }
         public void Display()
         {
