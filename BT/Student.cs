@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 namespace BT
 {
-    internal class Student
+    internal class Student : IComparable<Student>
     {
         public string Code;
         public string Name;
@@ -32,7 +32,7 @@ namespace BT
 
         public override string ToString()
         {
-            return  Code +"| "+ Name+"| "+Dob +"| "+ Major ;
+            return Code + "| " + Name + "| " + Dob + "| " + Major;
         }
         public void Display()
         {
@@ -46,11 +46,32 @@ namespace BT
             sfe.CheckInputDoB();
             sfe.CheckInputMajor();
         }
-
+        
         public override bool Equals(object? obj)
         {
             return obj is Student student &&
                    Code == student.Code;
         }
+
+        public int CompareTo(Student? other)
+        {
+            return this.Code.CompareTo(other.Code);
+        }
+        public static int CompareToByDoB(Student s1, Student s2)
+        {
+            return s1.Dob.CompareTo(s2.Dob);
+        }
+        public static int CompareToByMajor(Student s1, Student s2)
+        {
+            return s1.Major.CompareTo(s2.Major);
+        }
     }
+    class ComparebyName : IComparer<Student>
+    {
+        public int Compare(Student? x, Student? y)
+        {
+            return x.Name.CompareTo(y.Name);
+        }
+    }
+    
 }

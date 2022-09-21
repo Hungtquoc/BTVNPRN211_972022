@@ -85,5 +85,6 @@ namespace BT
             var subDirSize = (from directory in directories select GetFileSizeSumFromDirectory(directory)).Sum();
             return currentSize + subDirSize;
         }
+        
     }
 }
